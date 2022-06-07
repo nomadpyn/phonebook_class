@@ -5,18 +5,44 @@ class Phone
 {
 private:
 	char * name;
-	char home_number[6];
-	char work_number[6];
-	char mobile_number[12];
+	char home_number[7]{};
+	char work_number[7]{};
+	char mobile_number[13]{};
 	char * contact_data;
 public:
-	Phone(char* nameP, char homeP[6], char workP[6], char mobileP[12], char* data) {
-		name = new char[strlen(nameP)+1];
-		for (int i = 0; i < strlen(nameP); i++) {
-			name[i] = nameP[i];
+	Phone(string nameP,const char homeP[7],const char workP[7],const char mobileP[13],string data) {
+		int length= size(nameP)+1;
+		int i = 0;
+		this->name = new char[length];
+		for  (i = 0; i < length; i++) {
+			this->name[i] = nameP[i];
 		}
-		name[strlen(nameP) + 1] = '\0';
-
-	};
+		this->name[length] = '\0';
+		for (i = 0; i < 6; i++) {
+			this->home_number[i] = homeP[i];
+		}
+		for (i = 0; i < 6; i++) {
+			this->work_number[i] = workP[i];
+		}
+		for (i = 0; i < 12; i++) {
+			this->mobile_number[i] = mobileP[i];
+		}
+		length = size(data)+1;
+		this->contact_data = new char[length];
+		for (i = 0; i < length; i++) {
+			this->contact_data[i] = data[i];
+		}
+		this->contact_data[length] = '\0';
+	}
+	Phone() {
+		this->name = nullptr;
+		this->contact_data=nullptr;
+	}
+	~Phone() {
+		delete[]this->name;
+		delete[]this->contact_data;
+		cout << "Destrucktor\n";
+	}
+	void print();
 };
 
