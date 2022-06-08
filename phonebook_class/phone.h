@@ -7,10 +7,10 @@ private:
 	char * name;
 	char home_number[7]{};
 	char work_number[7]{};
-	char mobile_number[13]{};
+	char mobile_number[12]{};
 	char * contact_data;
 public:
-	Phone(string nameP,const char homeP[7],const char workP[7],const char mobileP[13],string data) {
+	Phone(string nameP,const char homeP[7],const char workP[7],const char mobileP[12],string data) {
 		int length= size(nameP)+1;
 		int i = 0;
 		this->name = new char[length];
@@ -39,8 +39,8 @@ public:
 		this->contact_data=nullptr;
 	}
 	~Phone() {
-		delete[]this->name;
-		delete[]this->contact_data;
+		delete[] name;
+		delete[] contact_data;
 		cout << "Destrucktor\n";
 	}
 	void print();

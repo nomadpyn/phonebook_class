@@ -42,3 +42,11 @@
 *.vcxproj
 *.filters
 *.user
+*.enc
+*.log
+*.recipe
+*.ilk
+*.tlog
+*.txt
+*.idb
+*.pdb
