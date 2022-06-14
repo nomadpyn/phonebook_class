@@ -17,7 +17,6 @@ public:
 		for  (i = 0; i < length; i++) {
 			this->name[i] = nameP[i];
 		}
-		this->name[length] = '\0';
 		for (i = 0; i < 6; i++) {
 			this->home_number[i] = homeP[i];
 		}
@@ -32,7 +31,6 @@ public:
 		for (i = 0; i < length; i++) {
 			this->contact_data[i] = data[i];
 		}
-		this->contact_data[length] = '\0';
 	}
 	Phone() {
 		this->name = nullptr;
