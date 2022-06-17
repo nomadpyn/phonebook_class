@@ -39,8 +39,12 @@ public:
 	~Phone() {
 		delete[] name;
 		delete[] contact_data;
-		cout << "Destrucktor\n";
 	}
 	void print();
+	void setName();
+	void setHomeN();
+	//void setWorkN();
+	//void setMobileN();
+	//void setContactData();
 };
 

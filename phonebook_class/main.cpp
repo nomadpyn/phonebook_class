@@ -1,11 +1,15 @@
 #include<iostream>
 #include"phone.h"
 
+
 using namespace std;
 
 int main() {
 
-	Phone a("Pintykov Alex","742559","776691","89133136654","IT Specialist from NVKZ");
+	Phone a;
+	a.print();
+	a.setName();
+	a.setHomeN();
 	a.print();
 
 	return 0;
