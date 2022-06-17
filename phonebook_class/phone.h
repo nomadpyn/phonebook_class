@@ -43,8 +43,8 @@ public:
 	void print();
 	void setName();
 	void setHomeN();
-	//void setWorkN();
-	//void setMobileN();
+	void setWorkN();
+	void setMobileN();
 	//void setContactData();
 };
 

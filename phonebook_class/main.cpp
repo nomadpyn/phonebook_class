@@ -10,6 +10,8 @@ int main() {
 	a.print();
 	a.setName();
 	a.setHomeN();
+	a.setWorkN();
+	a.setMobileN();
 	a.print();
 
 	return 0;

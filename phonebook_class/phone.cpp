@@ -9,17 +9,15 @@ void Phone::print() {
 	else {
 		cout << "Name - " << this->name << endl;
 	}
-	if (this->home_number[0] == 0) {
-		cout << "Home number is empty" << endl;
+	cout << "Home Number - " << this->home_number << endl;
+	cout << "Work Number - " << this->work_number << endl;
+	cout << "Mobile Number - " << this->mobile_number << endl;
+	if (this->contact_data == nullptr) {
+		cout << "Contacta data is empty" << endl;
 	}
 	else {
-		cout << "Home Number - " << this->home_number << endl;
+		cout << "About Contact - " << this->contact_data << endl;
 	}
-		
-		//cout << "Work Number - " << this->work_number << endl;
-		//cout << "Mobile Number - " << this->mobile_number << endl;
-		//cout << "About Contact - " << this->contact_data << endl;
-	//}
 }
 
 void Phone::setName() {
@@ -40,4 +38,18 @@ void Phone::setHomeN() {
 	cout << "Enter Home Number with 6 numbers ";
 	cin.getline(homeP, 7);
 	strcpy_s(this->home_number, homeP);
+}
+
+void Phone::setWorkN() {
+	char workP[7]{};
+	cout << "Enter Work Number with 6 numbers ";
+	cin.getline(workP, 7);
+	strcpy_s(this->work_number, workP);
+}
+
+void Phone::setMobileN() {
+	char mobileP[12]{};
+	cout << "Enter Mobile Number with 12 numbers ";
+	cin.getline(mobileP, 12);
+	strcpy_s(this->mobile_number, mobileP);
 }
