@@ -45,6 +45,6 @@ public:
 	void setHomeN();
 	void setWorkN();
 	void setMobileN();
-	//void setContactData();
+	void setContactData();
 };
 

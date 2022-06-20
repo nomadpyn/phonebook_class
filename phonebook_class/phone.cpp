@@ -53,3 +53,16 @@ void Phone::setMobileN() {
 	cin.getline(mobileP, 12);
 	strcpy_s(this->mobile_number, mobileP);
 }
+
+void Phone::setContactData() {
+	string data;
+	cout << "Enter data about contact ";
+	cin >> data;
+	delete[]this->contact_data;
+	int length = size(data) + 1;
+	this->contact_data = new char[length];
+	for (int i = 0; i < length; i++) {
+		this->contact_data[i] = data[i];
+	}
+	cin.ignore();
+}
