@@ -55,14 +55,19 @@ void Phone::setMobileN() {
 }
 
 void Phone::setContactData() {
-	string data;
+	char data[256];
 	cout << "Enter data about contact ";
-	cin >> data;
+	cin.getline(data, 256);
+	int length{};
+	for (int i = 0; i < 256; i++) {
+		length++;
+		if (data[i] == '\0')
+			break;
+	}
 	delete[]this->contact_data;
-	int length = size(data) + 1;
 	this->contact_data = new char[length];
 	for (int i = 0; i < length; i++) {
 		this->contact_data[i] = data[i];
 	}
-	cin.ignore();
+		
 }

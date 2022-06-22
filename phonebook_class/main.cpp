@@ -4,15 +4,27 @@
 
 using namespace std;
 
-int main() {
-
-	Phone a;
-	a.print();
+void setObj(Phone& a) {
 	a.setName();
 	a.setHomeN();
 	a.setWorkN();
 	a.setMobileN();
-	a.print();
+	a.setContactData();
+
+}
+
+int main() {
+
+	Phone arr[3]{};
+
+	for (int i = 0; i < 3; i++)
+		setObj(arr[i]);
+
+	for (int i = 0; i < 3; i++) {
+		arr[i].print();
+		cout << "-------------------------" << endl; 
+	}
+
 
 	return 0;
 }
