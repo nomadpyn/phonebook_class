@@ -2,6 +2,35 @@
 
 using namespace std;
 
+void Phone::operator=(const Phone& other) {
+	if (this->name != nullptr) {
+		delete this->name;
+	}
+	int length = strlen(other.name) + 1;
+	int i = 0;
+	this->name = new char[length];
+	for (i = 0; i < length; i++) {
+		this->name[i] = other.name[i];
+	}
+	for (i = 0; i < 6; i++) {
+		this->home_number[i] = other.home_number[i];
+	}
+	for (i = 0; i < 6; i++) {
+		this->work_number[i] = other.work_number[i];
+	}
+	for (i = 0; i < 12; i++) {
+		this->mobile_number[i] = other.mobile_number[i];
+	}
+	if (this->contact_data != nullptr) {
+		delete this->contact_data;
+	}
+	length = strlen(other.contact_data) + 1;
+	this->contact_data = new char[length];
+	for (i = 0; i < length; i++) {
+		this->contact_data[i] = other.contact_data[i];
+	}
+}
+
 void Phone::print() {
 	if (this->name == nullptr) {
 		cout << "Name is empty" << endl;

@@ -62,6 +62,7 @@ public:
 		delete[] name;
 		delete[] contact_data;
 	}
+	void operator =(const Phone& other);
 	void print();
 	void setName();
 	void setHomeN();
