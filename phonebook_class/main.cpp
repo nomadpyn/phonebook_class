@@ -1,9 +1,8 @@
-#include<iostream>
+﻿#include<iostream>
 #include"phone.h"
 
-
 using namespace std;
-
+// функция задания параметров объекта через сеттеры
 void setObj(Phone& a) {
 	a.setName();
 	a.setHomeN();

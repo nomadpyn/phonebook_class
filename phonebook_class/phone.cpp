@@ -1,7 +1,7 @@
-#include "phone.h"
+﻿#include "phone.h"
 
 using namespace std;
-
+// перегрузка оператора присваивания
 void Phone::operator=(const Phone& other) {
 	if (this->name != nullptr) {
 		delete this->name;
@@ -30,8 +30,8 @@ void Phone::operator=(const Phone& other) {
 		this->contact_data[i] = other.contact_data[i];
 	}
 }
-
-void Phone::print() {
+// метод вывода данных о контакте
+void Phone::print() const {
 	if (this->name == nullptr) {
 		cout << "Name is empty" << endl;
 	}
@@ -48,7 +48,7 @@ void Phone::print() {
 		cout << "About Contact - " << this->contact_data << endl;
 	}
 }
-
+// сеттер для имени контакта
 void Phone::setName() {
 	string nameP;
 	cout << "Enter name ";
@@ -61,28 +61,28 @@ void Phone::setName() {
 	}
 	cin.ignore();
 }
-
+// сеттер для домашнего номера телефона
 void Phone::setHomeN() {
 	char homeP[7]{};
 	cout << "Enter Home Number with 6 numbers ";
 	cin.getline(homeP, 7);
 	strcpy_s(this->home_number, homeP);
 }
-
+// сеттер для рабочего номера телефона
 void Phone::setWorkN() {
 	char workP[7]{};
 	cout << "Enter Work Number with 6 numbers ";
 	cin.getline(workP, 7);
 	strcpy_s(this->work_number, workP);
 }
-
+// сеттер для мобильного номера телефона
 void Phone::setMobileN() {
 	char mobileP[12]{};
 	cout << "Enter Mobile Number with 12 numbers ";
 	cin.getline(mobileP, 12);
 	strcpy_s(this->mobile_number, mobileP);
 }
-
+// сеттер для данных о контакте
 void Phone::setContactData() {
 	char data[256];
 	cout << "Enter data about contact ";

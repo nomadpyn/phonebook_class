@@ -1,6 +1,7 @@
-#pragma once
+﻿#pragma once
 #include<iostream>
 using namespace std;
+// класс Телефон (контакт)
 class Phone
 {
 private:
@@ -10,6 +11,7 @@ private:
 	char mobile_number[12]{};
 	char * contact_data;
 public:
+// конструктор с параметрами
 	Phone(string nameP,const char homeP[7],const char workP[7],const char mobileP[12],string data) {
 		int length= size(nameP)+1;
 		int i = 0;
@@ -32,10 +34,12 @@ public:
 			this->contact_data[i] = data[i];
 		}
 	}
+// конструктор по умолчанию
 	Phone() {
 		this->name = nullptr;
 		this->contact_data=nullptr;
 	}
+// конструктор копирования
 	Phone(const Phone & other){
 		int length = strlen(other.name) + 1;
 		int i = 0;
@@ -58,12 +62,14 @@ public:
 			this->contact_data[i] = other.contact_data[i];
 		}
 	}
+// деструктор
 	~Phone() {
 		delete[] name;
 		delete[] contact_data;
 	}
+// объявление методов класса в заголовочном файле
 	void operator =(const Phone& other);
-	void print();
+	void print() const;
 	void setName();
 	void setHomeN();
 	void setWorkN();
