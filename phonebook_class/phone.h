@@ -80,6 +80,7 @@ public:
 // объявление методов класса в заголовочном файле
 	Phone& operator =(const Phone& other);
 	Phone& operator = (Phone&& other);
+	friend ostream& operator<<(ostream& output, const Phone& other);
 	void print() const;
 	void setName();
 	void setHomeN();

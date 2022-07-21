@@ -43,8 +43,8 @@ Phone& Phone::operator=(Phone&& other) {
 		strcpy_s(this->home_number, other.home_number);
 		strcpy_s(this->work_number, other.work_number);
 		strcpy_s(this->mobile_number, other.mobile_number);
-
 	}
+	return *this;
 }
 // метод вывода данных о контакте
 void Phone::print() const {
@@ -115,4 +115,24 @@ void Phone::setContactData() {
 		this->contact_data[i] = data[i];
 	}
 		
+}
+// перегрузка оператора << вывода данных об объекте в консоль
+ostream& operator<<(ostream& output, const Phone& other) {
+	if (other.name == nullptr) {
+		cout << "Name is empty" << ", ";
+	}
+	else {
+		cout << "Name - " << other.name << ", ";
+	}
+	cout << "Home Number - " << other.home_number << ", ";
+	cout << "Work Number - " << other.work_number << ", ";
+	cout << "Mobile Number - " << other.mobile_number << ", ";
+	if (other.contact_data == nullptr) {
+		cout << "Contacta data is empty" << ", ";
+	}
+	else {
+		cout << "About Contact - " << other.contact_data << ".\n";
+	}
+	
+	return output;
 }

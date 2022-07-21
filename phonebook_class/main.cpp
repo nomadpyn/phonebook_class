@@ -1,5 +1,6 @@
 ﻿#include<iostream>
 #include"phone.h"
+#include<vector>
 
 using namespace std;
 // функция задания параметров объекта через сеттеры
@@ -16,14 +17,7 @@ int main() {
 
 	Phone arr[3]{};
 	Phone a("Bob", "778899", "445566", "89139132222", "Bob is great");
-	for (int i = 0; i < 3; i++)
-		arr[i] = a;
-
-	for (int i = 0; i < 3; i++) {
-		arr[i].print();
-		cout << "-------------------------" << endl; 
-	}
-
-
+	cout << a << endl;
+	
 	return 0;
 }
