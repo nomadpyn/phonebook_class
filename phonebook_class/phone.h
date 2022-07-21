@@ -62,6 +62,16 @@ public:
 			this->contact_data[i] = other.contact_data[i];
 		}
 	}
+// конструктор перемещения
+	Phone(Phone&& other) {
+		this->name = other.name;
+		other.name = nullptr;
+		this->contact_data = other.contact_data;
+		other.contact_data = nullptr;
+		strcpy_s(this->home_number, other.home_number);
+		strcpy_s(this->work_number, other.work_number);
+		strcpy_s(this->mobile_number, other.mobile_number);
+	}
 // деструктор
 	~Phone() {
 		delete[] name;
