@@ -136,3 +136,7 @@ ostream& operator<<(ostream& output, const Phone& other) {
 	
 	return output;
 }
+// геттер для имени абонента
+char* Phone::getName() const {
+	return this->name;
+}

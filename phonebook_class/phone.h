@@ -87,5 +87,6 @@ public:
 	void setWorkN();
 	void setMobileN();
 	void setContactData();
+	char* getName() const;
 };
 
