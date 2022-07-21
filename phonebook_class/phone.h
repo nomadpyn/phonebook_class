@@ -78,7 +78,8 @@ public:
 		delete[] contact_data;
 	}
 // объявление методов класса в заголовочном файле
-	void operator =(const Phone& other);
+	Phone& operator =(const Phone& other);
+	Phone& operator = (Phone&& other);
 	void print() const;
 	void setName();
 	void setHomeN();

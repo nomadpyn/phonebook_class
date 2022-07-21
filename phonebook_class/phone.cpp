@@ -1,8 +1,8 @@
 ﻿#include "phone.h"
 
 using namespace std;
-// перегрузка оператора присваивания
-void Phone::operator=(const Phone& other) {
+// перегрузка оператора = для копирования
+Phone& Phone::operator=(const Phone& other) {
 	if (this->name != nullptr) {
 		delete this->name;
 	}
@@ -28,6 +28,22 @@ void Phone::operator=(const Phone& other) {
 	this->contact_data = new char[length];
 	for (i = 0; i < length; i++) {
 		this->contact_data[i] = other.contact_data[i];
+	}
+	return *this;
+}
+//перегрузка оператора = для перемещения
+Phone& Phone::operator=(Phone&& other) {
+	if (!(this == &other)) {
+		delete[]this->name;
+		this->name = other.name;
+		other.name = nullptr;
+		delete[]this->contact_data;
+		this->contact_data = other.contact_data;
+		other.contact_data = nullptr;
+		strcpy_s(this->home_number, other.home_number);
+		strcpy_s(this->work_number, other.work_number);
+		strcpy_s(this->mobile_number, other.mobile_number);
+
 	}
 }
 // метод вывода данных о контакте
