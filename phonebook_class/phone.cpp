@@ -46,24 +46,6 @@ Phone& Phone::operator=(Phone&& other) {
 	}
 	return *this;
 }
-// метод вывода данных о контакте
-void Phone::print() const {
-	if (this->name == nullptr) {
-		cout << "Name is empty" << endl;
-	}
-	else {
-		cout << "Name - " << this->name << endl;
-	}
-	cout << "Home Number - " << this->home_number << endl;
-	cout << "Work Number - " << this->work_number << endl;
-	cout << "Mobile Number - " << this->mobile_number << endl;
-	if (this->contact_data == nullptr) {
-		cout << "Contacta data is empty" << endl;
-	}
-	else {
-		cout << "About Contact - " << this->contact_data << endl;
-	}
-}
 // сеттер для имени контакта
 void Phone::setName() {
 	string nameP;
@@ -139,4 +121,8 @@ ostream& operator<<(ostream& output, const Phone& other) {
 // геттер для имени абонента
 char* Phone::getName() const {
 	return this->name;
+}
+// метод вывода данных о контакте
+void Phone::print() const {
+	cout << this;
 }
